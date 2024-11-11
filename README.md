@@ -47,6 +47,7 @@ stopifnot(mon$count() == nrow(mtcars))
 ############################################
 
 \#\# Create a one dimensional frequency table
+
 \# for all x
 
 mongoTable(connection = "mon", x = "cyl")
@@ -58,6 +59,7 @@ mongoTable(connection="mon", x="cyl", query = '{\"mpg\": {\"$gt": 20}}')
 ############################################
 
 \#\# Create a two dimensional frequency table
+
 \# for all x and y
 
 mongoTable(con = "mon", x = "cyl", y = "gear")
