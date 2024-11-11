@@ -25,7 +25,7 @@ sort         logical. If TRUE, the output is sorted by frequency.
 decreasing   logical. If TRUE and sort==TRUE, the output is returned with decreasing frequencies. If TRUE and sort==FALSE, level names are returned in decreasing manner.
 
 ## Examples
-# use mongolite::mongo() to connect to a MongoDB instance (demo server)
+\# use mongolite::mongo() to connect to a MongoDB instance (demo server)
 mon <- mongolite::mongo("mtcars", url =
 "mongodb+srv://readwrite:test@cluster0-84vdt.mongodb.net/test")
 if(mon$count() > 0) mon$drop()
