@@ -15,7 +15,7 @@ decreasing = TRUE
 )
 
 ## Arguments
-connection   character. A mongo connection object initiated with mongolite::mongo().
+connection   &nbsp;&nbsp; character. A mongo connection object initiated with mongolite::mongo().
 
 x       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       character. A field variable for which frequencies should be counted.
 
