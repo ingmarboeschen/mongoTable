@@ -36,7 +36,6 @@ devtools::install_github("ingmarboeschen/mongoTable")
 ## Examples
 ```R
 ## use mongolite::mongo() to connect to a MongoDB instance (demo server)
-
 mon <- mongolite::mongo("mtcars", url = "mongodb+srv://readwrite:test@cluster0-84vdt.mongodb.net/test")
 if(mon$count() > 0) mon$drop()
 mon$insert(mtcars)
@@ -46,7 +45,7 @@ stopifnot(mon$count() == nrow(mtcars))
 # for all x
 mongoTable(connection = "mon", x = "cyl")
 
-# create a one dimensional frequency table for all x matching a query
+# for all x matching a query
 mongoTable(connection="mon", x="cyl", query = '{\"mpg\": {\"$gt": 20}}')
 
 ## Create a two dimensional frequency table
