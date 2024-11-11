@@ -33,7 +33,7 @@ decreasing  &nbsp; logical. If TRUE and sort==TRUE, the output is returned with 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;are returned in decreasing manner.
 
-## Examples
+\#\# Examples
 \# use mongolite::mongo() to connect to a MongoDB instance (demo server)
 
 mon <- mongolite::mongo("mtcars", url = "mongodb+srv://readwrite:test@cluster0-84vdt.mongodb.net/test")
@@ -45,7 +45,7 @@ mon$insert(mtcars)
 stopifnot(mon$count() == nrow(mtcars))
 
 ############################################
-## Create a one dimensional frequency table
+\#\# Create a one dimensional frequency table
 \# for all x
 
 mongoTable(connection = "mon", x = "cyl")
