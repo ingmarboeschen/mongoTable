@@ -33,7 +33,7 @@ decreasing  &nbsp; logical. If TRUE and sort==TRUE, the output is returned with 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;are returned in decreasing manner.
 
-\#\# Examples
+## Examples
 \# use mongolite::mongo() to connect to a MongoDB instance (demo server)
 
 mon <- mongolite::mongo("mtcars", url = "mongodb+srv://readwrite:test@cluster0-84vdt.mongodb.net/test")
