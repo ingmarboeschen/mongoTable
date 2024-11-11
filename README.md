@@ -15,13 +15,13 @@ decreasing = TRUE
 )
 
 ## Arguments
-connection   &nbsp;&nbsp; character. A mongo connection object initiated with mongolite::mongo().
+connection   &nbsp; character. A mongo connection object initiated with mongolite::mongo().
 
 x       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       character. A field variable for which frequencies should be counted.
 
 y       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       character. An optional second field variable for which frequencies should be counted.
 
-query    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      character. An optional MongoDB query for data subset selection (e.g.: ’{\"year\": 2024}’).
+query    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      character. An optional MongoDB query for data subset selection (e.g.: ’{\"year\": 2024}’).
 
 lowerize &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    logical. All levels in one dimensional tables will be lowerized.
 
