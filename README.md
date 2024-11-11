@@ -16,12 +16,19 @@ decreasing = TRUE
 
 ## Arguments
 connection   character. A mongo connection object initiated with mongolite::mongo().
+
 x            character. A field variable for which frequencies should be counted.
+
 y            character. An optional second field variable for which frequencies should be counted.
+
 query        character. An optional MongoDB query for data subset selection (e.g.: ’{\"year\": 2024}’).
+
 lowerize     logical. All levels in one dimensional tables will be lowerized.
+
 limit        integer. Defines the maximum length/dimensions of output.
+
 sort         logical. If TRUE, the output is sorted by frequency.
+
 decreasing   logical. If TRUE and sort==TRUE, the output is returned with decreasing frequencies. If TRUE and sort==FALSE, level names are returned in decreasing manner.
 
 ## Examples
