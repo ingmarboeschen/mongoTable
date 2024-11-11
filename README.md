@@ -26,20 +26,31 @@ decreasing   logical. If TRUE and sort==TRUE, the output is returned with decrea
 
 ## Examples
 \# use mongolite::mongo() to connect to a MongoDB instance (demo server)
-mon <- mongolite::mongo("mtcars", url =
-"mongodb+srv://readwrite:test@cluster0-84vdt.mongodb.net/test")
+
+mon <- mongolite::mongo("mtcars", url = "mongodb+srv://readwrite:test@cluster0-84vdt.mongodb.net/test")
+
 if(mon$count() > 0) mon$drop()
+
 mon$insert(mtcars)
+
 stopifnot(mon$count() == nrow(mtcars))
+
 ############################################
 ## Create a one dimensional frequency table
-# for all x
+\# for all x
+
 mongoTable(connection = "mon", x = "cyl")
-# create a one dimensional frequency table for all x matching a query
+
+\# create a one dimensional frequency table for all x matching a query
+
 mongoTable(connection="mon", x="cyl", query = '{\"mpg\": {\"$gt": 20}}')
+
 ############################################
 ## Create a two dimensional frequency table
-# for all x and y
+\# for all x and y
+
 mongoTable(con = "mon", x = "cyl", y = "gear")
-# for all x and y matching a query
+
+\# for all x and y matching a query
+
 mongoTable(con="mon", x = "cyl", y = "gear", query = '{\"mpg\": {\"$gt": 20}}')
