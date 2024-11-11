@@ -19,17 +19,17 @@ connection   character. A mongo connection object initiated with mongolite::mong
 
 x       &nbsp;&nbsp;&nbsp;&nbsp;     character. A field variable for which frequencies should be counted.
 
-y       $nbsp;$nbsp;$nbsp;$nbsp;     character. An optional second field variable for which frequencies should be counted.
+y       &nbsp;&nbsp;&nbsp;&nbsp;     character. An optional second field variable for which frequencies should be counted.
 
-query   $nbsp;$nbsp;$nbsp;$nbsp;     character. An optional MongoDB query for data subset selection (e.g.: ’{\"year\": 2024}’).
+query   &nbsp;&nbsp;&nbsp;&nbsp;     character. An optional MongoDB query for data subset selection (e.g.: ’{\"year\": 2024}’).
 
-lowerize $nbsp;$nbsp;$nbsp;$nbsp;    logical. All levels in one dimensional tables will be lowerized.
+lowerize &nbsp;&nbsp;&nbsp;&nbsp;    logical. All levels in one dimensional tables will be lowerized.
 
-limit   $nbsp;$nbsp;$nbsp;$nbsp;     integer. Defines the maximum length/dimensions of output.
+limit   &nbsp;&nbsp;&nbsp;&nbsp;     integer. Defines the maximum length/dimensions of output.
 
-sort     $nbsp;$nbsp;$nbsp;$nbsp;    logical. If TRUE, the output is sorted by frequency.
+sort     &nbsp;&nbsp;&nbsp;&nbsp;    logical. If TRUE, the output is sorted by frequency.
 
-decreasing  $nbsp;$nbsp;$nbsp;$nbsp; logical. If TRUE and sort==TRUE, the output is returned with decreasing frequencies. If TRUE and sort==FALSE, level names are returned in decreasing manner.
+decreasing  &nbsp;&nbsp;&nbsp;&nbsp; logical. If TRUE and sort==TRUE, the output is returned with decreasing frequencies. If TRUE and sort==FALSE, level names are returned in decreasing manner.
 
 ## Examples
 \# use mongolite::mongo() to connect to a MongoDB instance (demo server)
