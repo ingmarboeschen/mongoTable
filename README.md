@@ -15,8 +15,9 @@ decreasing = TRUE
 )
 
 ## Arguments
+
 | Name | Description|
-| --- | --- |
+| :--- | :--- |
 | connection   | character. A mongo connection object initiated with mongolite::mongo().|
 | x            |  character. A field variable for which frequencies should be counted.|
 | y            |  character. An optional second field variable for which frequencies should be counted.|
