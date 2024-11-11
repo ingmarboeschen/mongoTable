@@ -3,16 +3,11 @@
 Contains the function mongoTable() to create one and two dimensional frequency tables on a mongoDB connection initiated with the mongolite package.
 
 ## Usage
-mongoTable(
-connection,
-x,
-y = NULL,
-query = "{}",
-lowerize = FALSE,
-limit = NULL,
-sort = FALSE,
-decreasing = TRUE
+```R
+mongoTable(connection, x, y = NULL, query = "{}",
+lowerize = FALSE, limit = NULL, sort = FALSE, decreasing = TRUE
 )
+```
 
 ## Arguments
 
