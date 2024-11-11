@@ -4,9 +4,7 @@ Contains the function mongoTable() to create one and two dimensional frequency t
 
 ## Usage
 ```R
-mongoTable(connection, x, y = NULL, query = "{}",
-lowerize = FALSE, limit = NULL, sort = FALSE, decreasing = TRUE
-)
+mongoTable(connection, x, y = NULL, query = "{}",lowerize = FALSE, limit = NULL, sort = FALSE, decreasing = TRUE)
 ```
 
 ## Arguments
