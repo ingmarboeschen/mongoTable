@@ -34,7 +34,8 @@ decreasing  &nbsp; logical. If TRUE and sort==TRUE, the output is returned with 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and sort==FALSE, level names are returned in decreasing manner.
 
 ## Examples
-\# use mongolite::mongo() to connect to a MongoDB instance (demo server)
+
+\#\# use mongolite::mongo() to connect to a MongoDB instance (demo server)
 
 mon <- mongolite::mongo("mtcars", url = "mongodb+srv://readwrite:test@cluster0-84vdt.mongodb.net/test")
 
@@ -43,8 +44,6 @@ if(mon$count() > 0) mon$drop()
 mon$insert(mtcars)
 
 stopifnot(mon$count() == nrow(mtcars))
-
-############################################
 
 \#\# Create a one dimensional frequency table
 
@@ -55,8 +54,6 @@ mongoTable(connection = "mon", x = "cyl")
 \# create a one dimensional frequency table for all x matching a query
 
 mongoTable(connection="mon", x="cyl", query = '{\"mpg\": {\"$gt": 20}}')
-
-############################################
 
 \#\# Create a two dimensional frequency table
 
