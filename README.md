@@ -1,6 +1,6 @@
-# mongoTable
+# mongoTable::mongoTable()
 
-Contains the function mongoTable() to create one and two dimensional frequency tables on a mongoDB connection initiated with the mongolite package.
+This function generates one-dimensional and two-dimensional frequency tables from data stored in a MongoDB database. Rather than retrieving the entire dataset through a `find()` operation, this function leverages MongoDB's aggregation capabilities to compile frequency data directly on the server, followed by post-processing in R.
 
 ## Usage
 ```R
@@ -34,18 +34,18 @@ if(mon$count() > 0) mon$drop()
 mon$insert(mtcars)
 stopifnot(mon$count() == nrow(mtcars))
 
-## Create a one dimensional frequency table
+## Create a one-dimensional frequency table
 # for all x
 mongoTable(connection = "mon", x = "cyl")
 
-# for all x matching a query
+# for all x matching a query (cars with mpg greater than 20)
 mongoTable(connection="mon", x="cyl", query = '{\"mpg\": {\"$gt": 20}}')
 
-## Create a two dimensional frequency table
+## Create a two-dimensional frequency table
 # for all x and y
 mongoTable(con = "mon", x = "cyl", y = "gear")
 
-# for all x and y matching a query
+# for all x and y matching a query (cars with mpg greater than 20)
 mongoTable(con="mon", x = "cyl", y = "gear", query = '{\"mpg\": {\"$gt": 20}}')
 
 ```
