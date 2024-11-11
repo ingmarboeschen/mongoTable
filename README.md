@@ -34,7 +34,7 @@ if(require(devtools)!=TRUE) install.packages("devtools")
 devtools::install_github("ingmarboeschen/mongoTable")
 
 ## Examples
-
+```R
 \#\# use mongolite::mongo() to connect to a MongoDB instance (demo server)
 
 mon <- mongolite::mongo("mtcars", url = "mongodb+srv://readwrite:test@cluster0-84vdt.mongodb.net/test")
@@ -64,3 +64,5 @@ mongoTable(con = "mon", x = "cyl", y = "gear")
 \# for all x and y matching a query
 
 mongoTable(con="mon", x = "cyl", y = "gear", query = '{\"mpg\": {\"$gt": 20}}')
+
+```
