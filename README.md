@@ -34,7 +34,9 @@ decreasing  &nbsp; logical. If TRUE and sort==TRUE, the output is returned with 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and sort==FALSE, level names are returned in decreasing manner.
 
 ## Installation with the devtools package
+
 if(require(devtools)!=TRUE) install.packages("devtools")
+
 devtools::install_github("ingmarboeschen/mongoTable")
 
 ## Examples
