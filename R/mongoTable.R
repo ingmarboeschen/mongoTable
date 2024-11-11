@@ -1,41 +1,40 @@
-#' mongoTable
+' mongoTable
 #' 
-#' Function to create one and two dimensional frequency tables from a MongoDB connection.
+#' This function generates one-dimensional and two-dimensional frequency tables from data stored in a MongoDB database. Rather than retrieving the entire dataset through a `find()` operation, this function leverages MongoDB's aggregation capabilities to compile frequency data directly on the server, followed by post-processing in R.
+#' 
 #' @importFrom mongolite mongo
-#' @param connection character. A mongo connection object initiated with mongolite::mongo().
-#' @param x character. A field variable for which frequencies should be counted.
-#' @param y character. An optional second field variable for which frequencies should be counted.
-#' @param query character. An optional MongoDB query for data subset selection (e.g.: '\{\"year\": 2024\}').
-#' @param sort logical. If TRUE, the output is sorted by frequency. 
-#' @param decreasing logical. If TRUE and sort==TRUE, the output is returned with decreasing frequencies. If TRUE and sort==FALSE, level names are returned in decreasing manner. 
-#' @param limit integer. Defines the maximum length/dimensions of output. 
-#' @param lowerize logical. All levels in one dimensional tables will be lowerized.
-#' @return A one or two dimensional frequency table.
+#' @param connection A character vector representing a MongoDB connection object initialized with `mongolite::mongo()`.
+#' @param x A character string specifying the first field variable for which frequencies should be computed.
+#' @param y An optional character string specifying a second field variable for which frequencies should also be computed.
+#' @param query An optional character string representing a MongoDB query used to filter data (e.g., `'{ "year": 2024 }'`).
+#' @param sort A logical value indicating whether the output should be sorted by frequency. Defaults to `FALSE`.
+#' @param decreasing A logical value that, when set to `TRUE` and `sort` is also `TRUE`, returns the output sorted by decreasing frequencies. If `TRUE` while `sort` is `FALSE`, the level names in the output are listed in decreasing order.
+#' @param limit An integer value that specifies the maximum number of entries or dimensions in the output table.
+#' @param lowerize A logical value that, when set to `TRUE`, converts all level names in one-dimensional frequency tables to lowercase.
+#' @return A frequency table, either one-dimensional or two-dimensional, based on the specified parameters.
 #' @keywords MongoDB frequency table
 #' @export
 #' @examples 
-#' # use mongolite::mongo() to connect to a MongoDB instance (demo server)
+#' ## use mongolite::mongo() to connect to a MongoDB instance (demo server)
 #' mon <- mongolite::mongo("mtcars", url =
 #' "mongodb+srv://readwrite:test@cluster0-84vdt.mongodb.net/test")
+#' # Make sure to drop any existing collection before inserting
 #' if(mon$count() > 0) mon$drop()
+#' # Insert the 'mtcars' dataset into the MongoDB collection
 #' mon$insert(mtcars)
+#' # Verify that the number of documents inserted matches the number of rows in 'mtcars'
 #' stopifnot(mon$count() == nrow(mtcars))
 #' 
-#' ############################################
-#' ## Create a one dimensional frequency table 
+#' ## Create a one-dimensional frequency table 
 #' # for all x
 #' mongoTable(connection = "mon", x = "cyl")
-#' 
-#' # create a one dimensional frequency table for all x matching a query
+#' # for all x matching a query (cars with mpg greater than 20)
 #' mongoTable(connection="mon", x="cyl", query = '{\"mpg\": {\"$gt": 20}}')
 #' 
-#' ############################################
-#' ## Create a two dimensional frequency table
-#' 
+#' ## Create a two-dimensional frequency table
 #' # for all x and y
 #' mongoTable(con = "mon", x = "cyl", y = "gear")
-#' 
-#' # for all x and y matching a query
+#' # for all x and y matching a query  (cars with mpg greater than 20)
 #' mongoTable(con="mon", x = "cyl", y = "gear", query = '{\"mpg\": {\"$gt": 20}}')
 
 ###############################################################
