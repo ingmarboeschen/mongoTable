@@ -1,6 +1,6 @@
 # mongoTable::mongoTable()
 
-This function generates one-dimensional and two-dimensional frequency tables from data stored in a MongoDB database. Rather than retrieving the entire dataset through a `find()` operation, this function leverages MongoDB's aggregation capabilities to compile frequency data directly on the server, followed by post-processing in R.
+This R function generates one-dimensional and two-dimensional frequency tables from data stored in a MongoDB database. Rather than retrieving the entire dataset through a `find()` operation, this function leverages MongoDB's aggregation capabilities to compile frequency data directly on the server, followed by post-processing in R.
 
 ## Usage
 ```R
